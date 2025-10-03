@@ -34,15 +34,28 @@ This repository documents my lab work, notes, and exercises from the program —
 AWS-reStart-Labs/
 │
 ├── Linux-Basics/
-│   └── notes.md
+│   
 ├── Networking/
-│   └── lab-configurations.md
-├── AWS-Core-Services/
-│   └── s3-ec2-labs.md
-├── Security-and-IAM/
-│   └── iam-lab.md
-└── README.md
-
+│  
+├── Security/
+│   
+├── Python/
+│   
+├──Database
+│
+├── AWS Architechure/
+│   
+├── Sytem Operation/
+│  
+├── Tooling and Automation/
+│   
+├── Servers/
+│   
+├──Scaling and Name Resolution
+│
+├── Serverless and Container/
+│   
+└── Storage and Archiving/
 ---
 
 ## 💡 How This Repo Adds Value  
@@ -53,5 +66,5 @@ AWS-reStart-Labs/
 
 ---
 
-👉 *This repository reflects my AWS re/Start journey and serves as a foundation for my growth toward becoming a **Solutions Architect specialized in Cloud Security.***  
+👉 *This repository reflects my AWS re/Start journey and serves as a foundation for my growth toward becoming a **Cloud Security.***  
 
