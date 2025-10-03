@@ -1,1 +1,61 @@
+# AWS Lab: Public vs Private IP Addressing in a VPC  
+
+## 📌 Scenario  
+A Fortune 500 customer raised a ticket:  
+- They had two EC2 instances (A & B) in the same VPC and subnet.  
+- Instance A could not reach the internet, while Instance B could.  
+- They also asked whether using a public CIDR range like 12.0.0.0/16 for their VPC would cause issues.  
+
+Attached is their architecture diagram:  
+
+![Architecture Diagram](./diagrams/vpc1.png)  
+
+---
+
+## 🎯 Objectives  
+- Investigate why Instance A cannot access the internet while Instance B can.  
+- Analyze differences between **public** and **private IP addresses**.  
+- Provide a professional customer response with findings and recommendations.  
+
+---
+
+## 🛠️ Troubleshooting Approach  
+- Started from **Layer 1 (EC2 instance)** and worked upward, following the OSI model mapping to AWS resources.  
+- Compared **Instance A vs Instance B** networking configs (private IP, public IP, Elastic IP, etc.).  
+- Confirmed routing, IGW, and security groups were configured correctly.  
+
+---
+
+## ✅ Findings  
+- Instance A had **only a private IP** assigned → cannot reach internet.  
+- Instance B had a **public IP** assigned → can reach internet.  
+- Customer’s suggestion of using a public CIDR (12.0.0.0/16) for a VPC would cause routing conflicts with the public internet.  
+  - AWS recommends using **RFC 1918 private address ranges**:  
+    - 10.0.0.0/8  
+    - 172.16.0.0/12  
+    - 192.168.0.0/16  
+
+---
+
+## 💡 Customer Response (Business-Focused)  
+**Issue:** Instance A had no public IP, while Instance B did.  
+**Resolution:** Assign a public IP (or an Elastic IP) to Instance A if internet access is required.  
+**Best Practice:** Always use private IP ranges for VPCs. Avoid overlapping with public ranges to prevent routing and compliance issues.  
+
+---
+
+## 📂 Repo Contents  
+- `diagrams/` → Architecture diagrams.  
+- `findings/` → Detailed troubleshooting notes.  
+- `solution/` → Final customer response template.  
+
+---
+
+## 🌟 Skills Demonstrated  
+- Networking fundamentals (public vs private IPs, CIDR).  
+- AWS troubleshooting using the OSI model approach.  
+- Customer-facing communication (clear, solution-oriented).  
+- Diagramming AWS architectures.  
+
+---
 
